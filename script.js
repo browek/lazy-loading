@@ -4,6 +4,7 @@ const container = document.querySelector('.container')
 
 const render = data => {
     console.log(data)
+
     const {
         image_link, 
         name, 
@@ -13,6 +14,7 @@ const render = data => {
         geo_range,
         habitat
     } = data
+
     const fragment = document.createDocumentFragment();
 
         const div = document.createElement('div');
@@ -31,7 +33,7 @@ const render = data => {
                 Latin name: ${latin_name}
             </h3>
             <p>Animal type: ${animal_type}</p>
-            <p>Die:t ${diet}</p>
+            <p>Diet ${diet}</p>
             <p>Location: ${geo_range}</p>
             <p>Habitat: ${habitat}</p>
         </div>
@@ -52,7 +54,7 @@ const checkPosition = () => {
     let topPosition = window.pageYOffset
     let bottomPosition = window.document.body.offsetHeight
     let windowHeight = window.innerHeight
-    if(topPosition > bottomPosition - windowHeight) {
+    if(topPosition > bottomPosition - windowHeight - 500) {
         return true
     } else {
         return false
