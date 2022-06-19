@@ -42,9 +42,7 @@ const render = data => {
 
     container.appendChild(fragment)
 
-    if(checkPosition) {
         getData()
-    }
 }
 
 const success = response => response.json()
