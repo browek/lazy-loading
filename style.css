@@ -4,7 +4,7 @@ body {
 
 .container {
     display: flex;
-    /* text-align: center; */
+    text-align: center;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -34,4 +34,10 @@ body {
 }
 p, i {
     margin: 10px;
+}
+p {
+    text-align: right;
+}
+i {
+    text-align: left;
 }
