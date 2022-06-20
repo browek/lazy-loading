@@ -15,8 +15,6 @@ const render = data => {
         habitat
     } = data
 
-    const fragment = document.createDocumentFragment();
-
         const div = document.createElement('div');
         div.classList.add('animal');
         div.innerHTML = `
@@ -26,39 +24,33 @@ const render = data => {
             class="animal-image"
         >
         <div class="animal-content">
-            <h1 class="animal-name">
-                ${name}
-            </h1>
-
-            <p>Latin name:</p>     <i>${latin_name}</i>
-
-            <p>Animal type:</p> <i>${animal_type}</i>
-            <p>Diet:</p>        <i>${diet}</i>
-            <p>Location:</p>    <i>${geo_range}</i>
-            <p>Habitat:</p>     <i>${habitat}</i>
+            <h1 class="animal-name">${name}</h1>
+            <p>Latin name:</p>   <i>${latin_name}</i>
+            <p>Animal type:</p>  <i>${animal_type}</i>
+            <p>Diet:</p>         <i>${diet}</i>
+            <p>Location:</p>     <i>${geo_range}</i>
+            <p>Habitat:</p>      <i>${habitat}</i>
         </div>
         `
-        fragment.appendChild(div)
 
-    container.appendChild(fragment)
+    container.appendChild(div)
 
-        getData()
+    getData()
 }
 
 const success = response => response.json()
 const error = error => console.log(error)
 
 const checkPosition = () => {
-    let topPosition = window.pageYOffset
-    let bottomPosition = window.document.body.offsetHeight
-    let windowHeight = window.innerHeight
+    const topPosition = window.pageYOffset
+    const bottomPosition = window.document.body.offsetHeight
+    const windowHeight = window.innerHeight
     if(topPosition > bottomPosition - windowHeight - 500) {
         return true
     } else {
         return false
     }
 }
-
 
 const getData = () => {
     if(checkPosition()) {
