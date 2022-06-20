@@ -29,13 +29,13 @@ const render = data => {
             <h1 class="animal-name">
                 ${name}
             </h1>
-            <h3 class="latin-name">
-                Latin name: ${latin_name}
-            </h3>
-            <p>Animal type: ${animal_type}</p>
-            <p>Diet ${diet}</p>
-            <p>Location: ${geo_range}</p>
-            <p>Habitat: ${habitat}</p>
+
+            <p>Latin name:</p>     <i>${latin_name}</i>
+
+            <p>Animal type:</p> <i>${animal_type}</i>
+            <p>Diet:</p>        <i>${diet}</i>
+            <p>Location:</p>    <i>${geo_range}</i>
+            <p>Habitat:</p>     <i>${habitat}</i>
         </div>
         `
         fragment.appendChild(div)
@@ -58,7 +58,6 @@ const checkPosition = () => {
         return false
     }
 }
-
 
 
 const getData = () => {
